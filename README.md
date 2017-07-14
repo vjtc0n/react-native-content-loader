@@ -26,9 +26,9 @@ react-native link react-native-svg
 npm install react-native-content-loader
 ```
 
-**IMPORTANT: Remove “libRNSVG-tvOS.a” in xcode.**
+**IMPORTANT: Remove “libRNSVG-tvOS.a” from your project in xcode.**
 
-*(How? Open .xcodeproj inside ios folder. Click on your project (root in the folder navigator on your left).
+*(How? Open .xcodeproj inside yout project ios folder. Click on your project (root in the folder navigator on your left).
 Build Phases tab -> Link Binary with Libraries -> remove “libRNSVG-tvOS.a”)*
 
 
