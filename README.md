@@ -1,7 +1,6 @@
 # React Native Content Loader  
 
-Fork of https://github.com/virusvn/react-native-svg-animated-linear-gradient with minor modifications in order to use it outside of EXPO
-
+Fork of https://github.com/virusvn/react-native-svg-animated-linear-gradient with minor modifications in order to use it outside of Expo
 ## Demo
 <table>
 <tr><td>
