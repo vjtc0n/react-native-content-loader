@@ -38,6 +38,7 @@ export default class ContentLoader extends Component {
         this.loopAnimation = this
             .loopAnimation
             .bind(this)
+        this.isDidMounted = false;
     }   
     offsetValueBound(x) {
         if (x > 1) {
@@ -50,8 +51,13 @@ export default class ContentLoader extends Component {
     }
     componentDidMount(props) {
         this.loopAnimation()
+        this.isDidMounted = true;
     }
 
+    componentWillUnmount() {
+        this.isDidMounted = false;
+    }
+    
     loopAnimation() {
 
         // setup interpolate
@@ -73,7 +79,9 @@ export default class ContentLoader extends Component {
             offsetValues[0] = this.offsetValueBound(newState.offsetValues[0]);
             offsetValues[1] = this.offsetValueBound(newState.offsetValues[1]);
             offsetValues[2] = this.offsetValueBound(newState.offsetValues[2]);
-            this.setState({offsets: offsetValues});
+            if (this.isDidMounted) {
+                this.setState({offsets: offsetValues});
+            }
             if (t < 1) {
                 requestAnimationFrame(this._animation);
             }
@@ -91,7 +99,7 @@ export default class ContentLoader extends Component {
                 duration: this.state.frequence
             })
         ]).start((event) => {
-            if (event.finished) {
+            if (event.finished && this.isDidMounted) {
                 this.loopAnimation()
             }
         })
