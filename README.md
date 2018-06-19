@@ -1,6 +1,6 @@
 # React Native Content Loader  
+Fork of https://github.com/bunmiedee/react-native-content-loader with fix animation loop when component will unmount
 
-Fork of https://github.com/virusvn/react-native-svg-animated-linear-gradient with minor modifications in order to use it outside of Expo
 ## Demo
 <table>
 <tr><td>
